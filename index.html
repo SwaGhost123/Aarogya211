@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Health Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>🏥 Aarogya</h1>
+            <p class="subtitle">
+                A simple digital tool to help understand symptoms and keep basic health records.
+            </p>
+        </header>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            ⚠️ This is a student-built prototype.  
+            It does not provide medical diagnosis or treatment.
+        </div>
+
+        <!-- Login Section -->
+        <section id="loginSection" class="card">
+            <h2>Step 1: Sign In</h2>
+            <p>Sign in to save your health information securely.</p>
+            <button class="primary-btn" onclick="loginWithGoogle()">
+                Sign in with Google
+            </button>
+        </section>
+
+        <!-- Main App -->
+        <section id="appSection" style="display:none;">
+
+            <div class="user-bar">
+                <span>Welcome, <strong id="userName"></strong></span>
+                <button class="link-btn" onclick="logout()">Logout</button>
+            </div>
+
+            <!-- Symptom Checker -->
+            <div class="card">
+                <h2>Step 2: Describe Your Symptoms</h2>
+                <p>Write what you are feeling in simple words.</p>
+                <textarea
+                    id="symptoms"
+                    placeholder="Example: fever and headache for 2 days..."
+                ></textarea>
+                <button class="primary-btn" onclick="saveSymptoms()">
+                    Save Symptoms
+                </button>
+            </div>
+
+            <!-- Image Upload -->
+            <div class="card">
+                <h2>Step 3: Upload a Photo (Optional)</h2>
+                <p>You may upload a photo of the affected area if needed.</p>
+                <input type="file" id="imageUpload" accept="image/*" capture="camera">
+                <button onclick="uploadImage()">Upload Image</button>
+            </div>
+
+            <!-- Health Records -->
+            <div class="card">
+                <h2>Step 4: Your Health History</h2>
+                <button onclick="loadRecords()">🔄 Refresh Records</button>
+	<button class="danger-btn" onclick="clearHistory()">
+	    🗑️ Erase My Medical History
+	</button>
+                <div id="recordsList" class="records"></div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                Built by <strong>Swagot</strong> · Student Project · 2026
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <!-- TensorFlow.js (optional / future use) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+    <!-- App Logic -->
+    <script src="app.js"></script>
+
+</body>
+</html>
