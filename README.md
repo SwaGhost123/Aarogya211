@@ -148,8 +148,8 @@ Rural Health Assistant is a cloud-based platform that enables rural patients to:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/SwaGhost123/rural-health-assistant.git
-cd rural-health-assistant
+git clone https://github.com/SwaGhost123/aarogya211.git
+cd aarogya211
 ```
 
 2. **Configure Firebase**
@@ -173,7 +173,7 @@ cd rural-health-assistant
 
 ## 📁 Project Structure
 ```
-rural-health-assistant/
+aarogya211/
 ├── index.html          # Main HTML structure
 ├── app.js             # JavaScript logic & Firebase integration
 ├── style.css          # Styling and responsive design
